@@ -49,13 +49,15 @@ echo "> 😊😊 Install Kong"📦
 
 kubectl apply -f https://bit.ly/k4k8s
 
-sleep 20
+sleep 5
 
 echo "> 😊😊 Verify Kong install"
 
 kubectl get ns
 
 sleep 5
+
+kubectl get pods -n kong
 
 
 
