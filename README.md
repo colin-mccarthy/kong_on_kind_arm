@@ -1,5 +1,20 @@
 # kong_on_kind_arm
 
+
+##port forwarding...
+
+```
+kubectl -n kong port-forward --address localhost,0.0.0.0 svc/kong-proxy 8080:80
+```
+
+```
+curl localhost:8080
+{"message":"no Route matched with those values"}%  
+```
+
+
+##Trying to get it to work without port forwarding...
+
 ```
 kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
 
