@@ -3,7 +3,7 @@
 ```
 $ kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"}}}} }'
 
-
+```
 
 
 Change service kong-proxy from  LoadBalancer to NodePort
