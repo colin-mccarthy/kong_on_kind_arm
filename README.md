@@ -1,5 +1,8 @@
 # kong_on_kind_arm
 
+```
+$ kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"}}}} }'
+
 
 
 
