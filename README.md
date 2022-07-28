@@ -1,7 +1,7 @@
 # kong_on_kind_arm
 
 ```
-$ kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"}}}} }'
+kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
 
 
 kubectl -n kong get deployment ingress-kong -o=jsonpath="{.spec.template.spec.nodeSelector}"
