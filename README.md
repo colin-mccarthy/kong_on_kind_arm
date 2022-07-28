@@ -3,6 +3,8 @@
 ```
 $ kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"}}}} }'
 
+
+kubectl -n kong get deployment ingress-kong -o=jsonpath="{.spec.template.spec.nodeSelector}"
 ```
 
 
